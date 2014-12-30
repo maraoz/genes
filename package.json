@@ -1,0 +1,31 @@
+{
+  "name": "genes",
+  "version": "0.0.1",
+  "description": "Genetic algorithms for everyone",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maraoz/genes"
+  },
+  "keywords": [
+    "genetic",
+    "algorithms",
+    "artificial",
+    "intelligence",
+    "evolutionary",
+    "computation",
+    "evolve",
+    "chromosome",
+    "crossover",
+    "mutation"
+  ],
+  "author": "Manuel Araoz <manuelaraoz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maraoz/genes/issues"
+  },
+  "homepage": "https://github.com/maraoz/genes"
+}
