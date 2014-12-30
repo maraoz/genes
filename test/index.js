@@ -11,27 +11,30 @@ describe('genes', function() {
   });
 
   it('finds square root of 2', function(cb) {
+    this.timeout(5000);
     var Organism = genes.Organism;
     Organism.getRandomGene = function() {
-      return Math.random();
+      return Math.random() * 10 - 5;
     };
 
     Organism.prototype.fitness = function() {
-      return Math.max(1000 - Math.abs(Math.pow(this.genes, 2) - 2), 0);
+      var pow2 = Math.pow(this.genes, 2);
+      return -Math.abs(pow2 - 2);
     };
 
     Organism.prototype.mutate = function() {
-      this.gene += Math.random() - 0.5;
+      this.genes += Math.random() - 0.5;
     };
 
     Organism.prototype.mate = function(other) {
-      return (this.gene + other.gene) / 2;
+      return (this.genes + other.genes) / 2;
     };
 
-    var population = new genes.Population(5);
+    var population = new genes.Population(50);
     population.evolve(function generationCallback(best, generation) {
-      if (generation === 100) {
-        (Math.abs(best.gene - Math.sqrt(2))).should.be.below(0.001);
+      if (generation === 5000) {
+        console.log(best.genes);
+        (Math.abs(Math.abs(best.genes) - Math.sqrt(2))).should.be.below(0.0001);
         cb();
         return true;
       }
