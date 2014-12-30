@@ -27,5 +27,9 @@
   "bugs": {
     "url": "https://github.com/maraoz/genes/issues"
   },
-  "homepage": "https://github.com/maraoz/genes"
+  "homepage": "https://github.com/maraoz/genes",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0"
+  }
 }
