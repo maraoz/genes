@@ -17,7 +17,7 @@ describe('genes', function() {
     };
 
     Organism.prototype.fitness = function() {
-      return -Math.abs(Math.pow(this.gene, 2) - 2);
+      return Math.max(1000 - Math.abs(Math.pow(this.genes, 2) - 2), 0);
     };
 
     Organism.prototype.mutate = function() {
@@ -28,14 +28,15 @@ describe('genes', function() {
       return (this.gene + other.gene) / 2;
     };
 
-    var population = new genes.Population(1000);
+    var population = new genes.Population(5);
     population.evolve(function generationCallback(best, generation) {
       if (generation === 100) {
         (Math.abs(best.gene - Math.sqrt(2))).should.be.below(0.001);
         cb();
         return true;
       }
-      console.log(generation + ': ' + best.gene);
+      console.log('best for generation ' +
+        generation + ': ' + best.genes);
       return false;
     });
 
