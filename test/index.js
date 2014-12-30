@@ -29,13 +29,13 @@ describe('genes', function() {
     };
 
     var population = new genes.Population(1000);
-    population.evolve(function(best, iterations) {
-      if (iterations === 100) {
+    population.evolve(function generationCallback(best, generation) {
+      if (generation === 100) {
         (Math.abs(best.gene - Math.sqrt(2))).should.be.below(0.001);
         cb();
         return true;
       }
-      console.log(iterations + ': ' + best.gene);
+      console.log(generation + ': ' + best.gene);
       return false;
     });
 
