@@ -1,7 +1,7 @@
 {
   "name": "genes",
   "version": "0.0.1",
-  "description": "Genetic algorithms",
+  "description": "Genetic algorithm experiments",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
