@@ -89,7 +89,7 @@ describe('genes', function() {
 
   });
   describe('other', function() {
-    it('finds roots of poly', function(cb) {
+    it('finds words with many letter c', function(cb) {
       this.timeout(5000);
       var Organism = genes.Organism;
       var rs = function() {
